@@ -4,3 +4,7 @@
 *.o
 sort
 *.hi
+*.log
+*.gz
+*.pdf
+*.aux

@@ -1,8 +1,7 @@
-with Ada.Text_IO;
+with IO;
 
 procedure sort is
     pragma Suppress (all_checks);
-    package IO renames Ada.Text_IO;
     type Number_List is array (Positive range <>) of Integer;
     data : Number_List := (0, 42, 256, 4, 4711, -1337);
 

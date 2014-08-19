@@ -1,0 +1,68 @@
+\documentclass[a4paper]{scrreprt}
+\usepackage{fullpage} % Slightly more margins
+\usepackage{amsfonts}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[english]{babel}
+\selectlanguage{english}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{lastpage}
+\usepackage{pgf}
+\usepackage{wrapfig}
+\usepackage{fancyvrb}
+\usepackage{listings} % Source code highlighting
+\usepackage{algpseudocode} % Algorithms
+\usepackage{libertine}
+\renewcommand*\familydefault{\sfdefault}  %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+\usepackage{courier}
+
+% Create header and footer
+\headheight 27pt
+\pagestyle{fancyplain}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+
+% Create title page
+\title{Assignment 4}
+\subtitle{Object-Oriented Design, IV1350}
+\author{Emil Tullstedt emiltu@kth.se}
+\date{2014-05-15}
+
+\lstset{basicstyle=\footnotesize\ttfamily, numbers=left}
+
+\begin{document}
+
+\chapter{Alice}
+
+\lstinputlisting[language=Java]{../sort.java}
+
+\chapter{Bob}
+
+\lstinputlisting[language=Ada]{../sort.adb}
+
+\chapter{Carol}
+
+\lstinputlisting[language=Python]{../sort.py}
+
+\chapter{Dan}
+
+\lstinputlisting[language=C]{../sort.c}
+
+\chapter{Eve}
+
+\lstinputlisting[language=Ruby]{../sort.rb}
+
+\chapter{Mallory}
+
+\lstinputlisting[language=Haskell]{../sort.hs}
+
+\end{document}
