@@ -32,36 +32,41 @@
 \cfoot{}
 
 % Create title page
-\title{Assignment 4}
-\subtitle{Object-Oriented Design, IV1350}
-\author{Emil Tullstedt emiltu@kth.se}
-\date{2014-05-15}
+\title{Guess the Programming Language}
+\subtitle{}
+\author{Mottagningen}
+\date{2014-08-21}
 
-\lstset{basicstyle=\footnotesize\ttfamily, numbers=left}
+\lstset{
+				basicstyle=\footnotesize\ttfamily, 
+				numbers=left,
+				frame=l,
+				keywordstyle=\bfseries\color{blue!40!black},
+                stringstyle=\color{red},
+                commentstyle=\color{green},
+                identifierstyle=\color{black},
+                showstringspaces=false
+}
 
 \begin{document}
 
-\chapter{Lösningsguide}
-
-LÅT DET VARA KÄNT ATT DET HÄR ÄR EN DRAFT!
-
 \begin{enumerate}
-\item Alice är Java (1p)
-\item Bob är Ada (2p)
-\item Carol är Python (1p)
-\item Dan är C (1p) (C++ är också ett acceptabelt svar)
-\item Eve är Ruby (1p)
-\item Mallory är Haskell (2p)
-\item Oscar är JavaScript (1p)
-\item Frank är mips assembler (2p)
-\item Hallonsoda är whitespace (eller praktiskt taget vilket annat programmeringsspråk som helst. Det kompilerar överallt) (2p för whitespace, 1p för annat programmeringsspråk, -1p för "Det är bara en tom sida") 
+\item Alice är Java
+\item Bob är Ada
+\item Carol är Python
+\item Dan är C (C++ är också ett acceptabelt svar)
+\item Eve är Ruby
+\item Mallory är Haskell
+\item Oscar är JavaScript
+\item Frank är mips assembler
+\item Edwin är whitespace (eller praktiskt taget vilket annat programmeringsspråk som helst. Det kompilerar överallt) (2p för whitespace, 1p för annat programmeringsspråk) 
 \end{enumerate}
 
-2 bonuspoäng till personer som identifierar att Alice, Bob, Carol, Dan, Eve, Mallory och Oscar är implementationer av "quicksort"-algoritmen (också känd som partition-exchange sort)
+Alice, Bob, Carol, Dan, Eve, Mallory och Oscar är implementationer av "quicksort"-algoritmen (också känd som partition-exchange sort)
 
-3 bonuspoäng till personer som identifierar att Frank skiljer sig från de övriga implementationerna genom att vara en implementation av "insertion sort"
+Frank skiljer sig från de övriga implementationerna genom att vara en implementation av "insertion sort"
 
-Om personerna identifierar att de olika kod-styckena är sorteringsalgoritmer men inte 
+\maketitle
 
 \chapter{Alice}
 
@@ -94,6 +99,7 @@ Om personerna identifierar att de olika kod-styckena är sorteringsalgoritmer me
 \chapter{Frank}
 \lstinputlisting[language={}]{../sort.mips}
 
-\chapter{Hallonsoda}
+\chapter{Edwin}
+\lstinputlisting[language={}]{../sort.ws}
 
 \end{document}
