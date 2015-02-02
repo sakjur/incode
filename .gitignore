@@ -8,3 +8,4 @@ sort
 *.gz
 *.pdf
 *.aux
+*.beam
