@@ -5,16 +5,16 @@ def locatep(n):
         return [2]
     if n < 2:
         return []
-    fin = [2]
+    p = [2]
     arr = []
     for i in range(3, n+1, 2):
         arr.append(i)
     while len(arr) > 1 and arr[0]**2 <= n:
         num = arr.pop(0)
-        fin.append(num)
+        p.append(num)
         red(num, arr)
-    fin.extend(arr)
-    return fin
+    p.extend(arr)
+    return p
 
 def red(k, arr):
     i = 2
