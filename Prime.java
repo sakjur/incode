@@ -27,9 +27,10 @@ public class Prime {
         List<Integer> list = new ArrayList<Integer>();
         List<Integer> list2 = new ArrayList<Integer>();
 
-        if (n <=2) {
-            for(int i = 0; i < n; i++)
-                list.add(i);
+		if(n < 2)
+			return list;
+        if (n == 2) {
+            list.add(2);
             return list;
         }
         
