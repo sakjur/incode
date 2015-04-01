@@ -18,9 +18,14 @@ public class Prime {
     }
 
     private static void printList(List<Integer> list) {
+        System.out.print("[");
         for(int i = 0; i <list.size(); i++) {
-            System.out.println(list.get(i));
+            System.out.print(list.get(i));
+
+            if(i != list.size() - 1)
+                System.out.print(", ");
         }
+        System.out.print("]\n");
     }
 
     private static List<Integer> locatep(int n) {
@@ -29,7 +34,7 @@ public class Prime {
 
 		if(n < 2)
 			return list;
-        if (n == 2) {
+        if(n == 2) {
             list.add(2);
             return list;
         }
