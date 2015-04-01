@@ -1,10 +1,9 @@
 #include <list>
 #include <math.h>
 #include <iostream>
+#include <cstdlib>
                                                                                         
 using namespace std;
-
-
 
 list<int> reduce(int n, list<int> l){
     int i = 1;
@@ -47,8 +46,15 @@ list<int> locatePrimes(int n){
 
 
 int main(int argc, char **argv){
+    list<int> primes;
+    if(argc > 1) {
+        int max = atoi(argv[1]);
+        primes = locatePrimes(max);
+    }
+    else {
+        primes = locatePrimes(100);
+    }
 
-    list<int> primes = locatePrimes(100);
     int i=0;
     cout << "[";
 
