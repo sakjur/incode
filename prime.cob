@@ -1,8 +1,10 @@
        identification division.
        program-id.     prime.
        author.         Emil Tullstedt.
-       date-written.   May 24 2015.
-
+       date-written.   May 29 2015.
+      * "Let's all get up and dance to a song that was a hit before your
+      * mother was born, though she was born a long, long time ago. Your
+      * mother should know, your mother should know"
        data division.
            working-storage section.
            01 counter pic 9(5).
@@ -16,11 +18,14 @@
                05 endoflist pic x(5) value "wseol".
 
        procedure division.
+      * I think I could do this in the data division, but can't figure
+      * out how... :(
         perform varying counter from 1 by 1 until
         primecandidates(counter) is equal to "wseol"
            set primecandidates(counter) to counter
            end-perform
         set primecandidates(1) to 0
+      * Magic stuff!
         perform varying counter from 3 by 1 until
         primecandidates(counter) is equal to "wseol"
            perform varying ic from 2 by 1 until
@@ -32,11 +37,11 @@
                end-if
            end-perform
         end-perform
-
+      * Printing display stuff
         perform varying counter from 1 by 1 until
         primecandidates(counter) is equal to "wseol"
            if primecandidates(counter) is not equal to 0
                display primecandidates(counter)
            end-if
-           end-perform
+        end-perform
        stop run.
