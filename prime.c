@@ -11,17 +11,24 @@ numli* find_primes(int);
 numli* multiples(int, int); 
 void delete_from_list(numli* list, numli* remove);
 
-int main(void) {
-    numli* current = find_primes(100);
+int main(int argc, char *argv[]) {
+    numli* current = 0;
+    if (argc < 2)
+        current = find_primes(100);
+    else
+        current = find_primes(atoi(argv[1]));
     while(current) {
         numli* prev = current;
         printf("%d\n", current->val);
         current = prev->next;
         free(prev);
     }
+    return 0;
 }
 
 numli* find_primes(int n) {
+    if (n < 2)
+        return 0;
     numli* first = (numli*) malloc(sizeof(numli));
     numli* curr = first;
     first->val = 2;
@@ -33,7 +40,7 @@ numli* find_primes(int n) {
         curr->val = i; 
         curr->next = 0;
     }
-    curr = first;
+    curr = first->next;
     while (curr && curr->val <= sqrt(n))
     {
         delete_from_list(first, multiples(curr->val, n));
