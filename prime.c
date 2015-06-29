@@ -41,8 +41,7 @@ numli* find_primes(int n) {
         curr->next = 0;
     }
     curr = first->next;
-    while (curr && curr->val <= sqrt(n))
-    {
+    while (curr && curr->val <= sqrt(n)) {
         delete_from_list(first, multiples(curr->val, n));
         curr = curr->next;
     }
@@ -66,8 +65,7 @@ void delete_from_list(numli* first, numli* remove_first) {
                 prevprev->next = current;
             free(prev);
         }
-        else
-        {
+        else {
             prevprev = current;
             current = current->next;
         }
