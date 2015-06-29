@@ -1,8 +1,3 @@
-generatelist    :: Integer -> [Integer]
-generatelist n
-    | n >= 2 = 2:[3,5..n]
-    | n <  2 = []
-
 multiples       :: Integer -> Integer -> [Integer]
 multiples n max = [n, 2*n..max]
 
@@ -18,18 +13,19 @@ remove_from_list target removal_array rv
         remove_from_list (tail target) removal_array (rv ++ [head target])
 
 findprimes :: Integer -> [Integer]
-findprimes n =
-    findprimes' n (generatelist n) []
+findprimes n 
+    | n < 2 = []
+    | otherwise =
+        2:(findprimes' [3,5..n] [])
     
-findprimes' :: Integer -> [Integer] -> [Integer] -> [Integer]
-findprimes' n candidates primes
+findprimes' :: [Integer] -> [Integer] -> [Integer]
+findprimes' candidates primes
     | null candidates = primes
     | otherwise =
         findprimes'
-            n
             (remove_from_list
                 candidates
-                (multiples (head candidates) n)
+                (multiples (head candidates) (last candidates))
                 [])
             (primes ++ [head candidates])
 
