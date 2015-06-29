@@ -29,3 +29,5 @@ findprimes' candidates primes
                 [])
             (primes ++ [head candidates])
 
+main = print (findprimes 100)
+
