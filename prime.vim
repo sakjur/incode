@@ -12,13 +12,15 @@ function GetPrimes(n)
         let multiples = Multiples(candidates[0], a:n)
         let c = 0
         while c <= len(candidates)-1 && 1 <= len(multiples)
+            " This will eventuallyterminate, because either the counter will 
+            " increase, or either of the list sizes will decrease
             if candidates[c] == multiples[0] 
                 call remove(candidates, c)
             elseif candidates[c] > multiples[0]
                 call remove(multiples, 0)
-                continue
+            else
+                let c += 1
             endif
-            let c += 1
         endwhile
     endwhile
     echo primes
