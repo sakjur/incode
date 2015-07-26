@@ -1,4 +1,4 @@
-<?php
+<?
 
 function locatep($n){
 	if ($n == 2){
