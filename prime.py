@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sys
 
 def locatep(n):
@@ -17,6 +18,7 @@ def locatep(n):
     return p
 
 def red(k, arr):
+    """Remove combinatorical digits"""
     i = 2
     while k*i <= arr[-1]:
         try:
