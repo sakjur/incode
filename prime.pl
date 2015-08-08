@@ -1,4 +1,5 @@
-#!/usr/bin/env perl
+#!/usr/bin/env notquitethatsimple
+# Although this is a comment.
 use strict;
 use warnings;
 

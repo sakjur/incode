@@ -1,4 +1,4 @@
--- prime number generator in lua
+-- prime number generator
 
 function getprimes (n)
     if n < 2 then

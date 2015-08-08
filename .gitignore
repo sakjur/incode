@@ -3,3 +3,8 @@
 *.class
 *.out
 *.exe
+*.aux
+*.log
+*.pdf
+*.fls
+*.fdb_latexmk
