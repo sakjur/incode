@@ -54,8 +54,6 @@ Function findPrimes(max As Integer)
                      candidates(UBound(candidates)) = X
                  Next
             End If
-
-
             While ((Not UBound(candidates) = 0) And (candidates(0) ^ 2 <= max))
                 arraySize = UBound(primes) + 1
                 ReDim Preserve primes(0 To (arraySize)) As Integer
