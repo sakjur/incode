@@ -14,7 +14,6 @@ Sub sendPrimes(mail As Outlook.MailItem)
 End Sub
 
 Function findPrimes(max As Integer)
-    ' Get all prime numbers between zero and max
     Dim primes() As Integer
     Dim candidates() As Integer
     ReDim candidates(0) As Integer
@@ -25,8 +24,6 @@ Function findPrimes(max As Integer)
             candidates(0) = 3
             If max > 4 Then
                  For X = 5 To (max) Step 2
-                     ' Ugly solution for appending to the array, but hey, we built this city
-                     ' on ugly solutions and ugly solutions alone.
                      ReDim Preserve candidates(UBound(candidates) + 1)
                      candidates(UBound(candidates)) = X
                  Next
@@ -57,12 +54,12 @@ Function red(candidates() As Integer, prime As Integer)
             ReDim Preserve keep((UBound(keep)) + 1)
         End If
     Next
-    ReDim Preserve keep(0 To UBound(keep) - 1) ' Remove the extra element
+    ReDim Preserve keep(0 To UBound(keep) - 1)
     red = keep
 End Function
 
 Function intsToString(a)
-    On Error GoTo EmptyArrayHandler:
+    On Error GoTo EmptyArrayHandler:  ' This is dangerous.
         Dim newSize As Integer
         newSize = UBound(primes)
         Dim primestrings() As String
@@ -72,6 +69,6 @@ Function intsToString(a)
         Next
         intsToString = Join(primestrings)
 Exit Function
-EmptyArrayHandler:
+EmptyArrayHandler:  ' But what if? No. Nothing can go wrong here.
     intsToString = " "
 End Function
