@@ -1,26 +1,3 @@
-Sub FwdPrimes()
-    Dim ol As Outlook.Application
-    Dim expl As Outlook.Explorer
-    Dim folder As Outlook.folder
-    Dim obj As Object
-    Dim mail As Outlook.MailItem
-    Dim fwdFilter As String         ' What are we looking for?
-    fwdFilter = "prime"
-    Set ol = Application
-    Set expl = ol.ActiveExplorer
-    Set folder = expl.CurrentFolder
-    For Each obj In folder.Items
-        With obj
-            If obj.Class = olMail Then
-                Set mail = obj
-                If Not (InStr(mail.Subject, fwdFilter) = 0) Then
-                    sendPrimes mail
-                End If
-            End If
-        End With
-    Next
-End Sub
-
 Sub sendPrimes(mail As Outlook.MailItem)
     If IsNumeric(mail.Body) Then
         Dim newMessage As Outlook.MailItem
