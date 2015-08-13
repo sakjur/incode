@@ -33,9 +33,6 @@ Sub sendPrimes(mail As Outlook.MailItem)
                 newMessage.Body = intsToString(primes)
                 newMessage.Send
         End With
-    Else
-        newMessage.Body = "Give me a number and only a number, please."
-        newMessage.Send
     End If
 End Sub
 
