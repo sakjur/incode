@@ -45,7 +45,17 @@ Function findPrimes(max As Integer)
         ReDim primes(0) As Integer
         primes(0) = 2
         If max > 2 Then
-            candidates() = getCandidates(max)
+            candidates(0) = 3
+            If max > 4 Then
+                 For X = 5 To (max) Step 2
+                     ' Ugly solution for appending to the array, but hey, we built this city
+                     ' on ugly solutions and ugly solutions alone.
+                     ReDim Preserve candidates(UBound(candidates) + 1)
+                     candidates(UBound(candidates)) = X
+                 Next
+            End If
+
+
             While ((Not UBound(candidates) = 0) And (candidates(0) ^ 2 <= max))
                 arraySize = UBound(primes) + 1
                 ReDim Preserve primes(0 To (arraySize)) As Integer
@@ -74,23 +84,6 @@ Function red(candidates() As Integer, prime As Integer)
     Next
     ReDim Preserve keep(0 To UBound(keep) - 1) ' Remove the extra element
     red = keep
-End Function
-
-Function getCandidates(max As Integer)
-    If max > 2 Then
-        Dim candidates() As Integer     ' I think this is the only way to create a
-        ReDim candidates(0)             ' dynamic array.
-        candidates(0) = 3
-        If max > 4 Then
-            For X = 5 To (max) Step 2
-                ' Ugly solution for appending to the array, but hey, we built this city
-                ' on ugly solutions and ugly solutions alone.
-                ReDim Preserve candidates(UBound(candidates) + 1)
-                candidates(UBound(candidates)) = X
-            Next
-        End If
-    End If
-    getCandidates = candidates
 End Function
 
 Function intsToString(a)
