@@ -1,0 +1,12 @@
+*.out
+*.class
+*.ali
+*.o
+sort
+*.hi
+*.log
+*.gz
+*.pdf
+*.aux
+*.beam
+*.swp
